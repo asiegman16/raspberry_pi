@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww20720\viewh13420\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 For setting up a headless Raspberry Pi via Ethernet on MacOS: \
+
+\f1\b0 \
+\
+1. System Preferences >> Network >> USB 10/100/1000 LAN \
+	\'97Configure IPv4: Manually\
+	\'97IP address: 10.1.2.2\
+	\'97Subnet Mask: 255.255.255.0\
+\
+2.  Download \'91The Unarchiver\'92 (to unzip Raspbian image) \
+3. Download \'91balenaEtcher\'92 \
+4. Open balenaEtcher and select the Raspian image you want to write to your SD card\
+5. Click \'91Flash\'92 (to flash the Raspian image to the MicroSD card)\
+\
+6. > cd /Volumes/boot \
+7. > touch ssh \
+\
+8. > cd /Volumes/boot\
+9. > nano cmdline.txt\
+	\'97At the end of cmdline.txt, add \'93ip=10.1.1.1\'94\
+\
+10. System Preferences >> Sharing >> Enable \'91Remote Login\'92\
+11. > ssh pi@raspberrypi.local 
+\f0\b \
+
+\f1\b0 \
+12. > sudo apt update\
+13. > sudo apt install realvnc-vnc-server realvnc-vnc-viewer\
+14. > vncserver\
+\
+15. Connect to \'93raspberrypi.local:1\'94 in VNC Connect\
+\
+16. Pi Preferences >> Enable VNC\
+\
+\
+\
+}
